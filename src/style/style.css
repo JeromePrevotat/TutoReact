@@ -1,0 +1,26 @@
+.input-container {
+	width: 300px;
+	margin: auto;
+}
+
+.input-text {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 10px;
+	width: 100%;
+}
+
+.checkbox {
+	margin: 4px;
+}
+
+.table {
+	width: 75%;
+	margin: auto;
+}
+
+.category {
+	font-weight: bold;
+	text-align: center;
+}

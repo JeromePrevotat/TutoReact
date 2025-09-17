@@ -13,4 +13,9 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Installation
 Create project : npm create vite@lastest ./
-Install dependancies : npm i 
+Install dependancies : npm i
+
+Manage display from child component :
+useState in parent
+send setter to child
+event calls setter to notify parent
