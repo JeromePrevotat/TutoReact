@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+const title = "Bonjour les gens !";
+const showTitle = false;
+const toDos = ["Présenter React", "Présenter JSX", "Créer des composants"];
 function App() {
-  const [count, setCount] = useState(0)
+	const handleClick = (event) => {
+		alert("Vous avez cliqué !");
+	};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			{showTitle ? (
+				<h1 id="title" className="title">
+					{title}
+				</h1>
+			) : (
+				<h1 id="title" className="title">
+					Titre par défaut
+				</h1>
+			)}
+			<input type="text" />
+			<p onClick={handleClick}>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+				Placeat atque ut pariatur quidem fugiat at dolores soluta.
+				Officiis ratione vero odit voluptas repudiandae praesentium
+				quibusdam quia, inventore natus mollitia. Nobis. Quos eveniet,
+				iusto harum officiis facilis adipisci repudiandae fugiat
+				reiciendis explicabo incidunt aspernatur et laborum nemo. Vel
+				aliquid pariatur dicta exercitationem. Incidunt quidem,
+				quibusdam repudiandae soluta doloremque illo possimus ex!
+			</p>
+      <ul>
+        {toDos.map((toDo) => (<li key={toDo}>{toDo}</li>))}
+      </ul>
+		</>
+	);
 }
 
-export default App
+export default App;
