@@ -64,8 +64,64 @@ Enclose LazyComponent with a Suspense Component
 Suspense support a FallbackComponent to display while loading
 
 ## useReducer
+
 reducer(state, action)
 /!\ return new objects as state /!\
 
 returns [newState, dispatch]
 takes (reducer, initialState)
+
+## useContext
+
+Send info to children
+create context
+create provider
+create custom hook
+Enclose with Provider
+Or create a dedicated Component and passing it children
+Create custom Hook instead of exporting Context
+
+## Testing
+
+npm i -D vitest jsdom @testing-library/react
+add script test: vitest to package.json
+config vite to add jsdom as test env
+also define a setup file
+import describe, it, expect, act
+renderHook for Hooks
+render for Components
+screen.debug()
+toMatchInlineSnapshot : generate expected html code
+BLACK MAGIC HERE
+user-event library to simulate user action
+click(screen.[targetMethod])
+
+## Render properties
+itemRenderer function
+OR
+Component
+
+## useSyncExternalStore
+3 params : subscribe, getSnapshot, getServerSnapshot (SSR)
+
+## React Router Dom
+npm i react-router-dom
+createBrowserRouter
+path, element
+return RouterProvider router={router}
+Link to=[url]
+NavLink detects active element
+param path :id
+const {is} = useParams()
+children path element
+Outlet Componentto display children
+ErrorElement: ErrorComponent
+const error = useRouteError() to get the error
+load data during page loading
+loader() => fetch
+return defer to allow Component display while loading data
+const data = useLoaderData
+Get router state : const state = useNavigation
+Suspense
+    Await resolve={promise}
+get promise result inside child Component useAsynvValue

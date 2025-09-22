@@ -8,8 +8,28 @@ import { CompteurComponent } from "./Components/exercice/compteur";
 import { UseDocTitleComponent } from "./Components/exercice/docTitle";
 import { ApiFetchComponent } from "./Components/exercice/apiFetch";
 import { useApiFetch } from "./hooks/useApiFetch";
+import ChatIndicator from "./Components/exercice/chat";
+import { createBrowserRouter } from "react-router-dom";
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <div>Page d'acceuil</div>,
+		children: [
+			{
+				path: "blog",
+				element: <div>Page blog</div>,
+			},
+			{
+				path: "contact",
+				element: <div>Page contact</div>,
+			}
+		],
+	}
+]);
 
 function App() {
+	return <RouterProvider router={router} />;
 	const productList = [
 		{ id: 1, name: "Apple", price: 1, category: "Fruits", stocked: true },
 		{
@@ -81,8 +101,11 @@ function App() {
 			<div className="container my-3">
 				<UseDocTitleComponent />
 			</div> */}
-			<div className="container my-3">
+			{/* <div className="container my-3">
 				<ApiFetchComponent />
+			</div> */}
+			<div className="container my-3">
+				<ChatIndicator />
 			</div>
 		</>
 	);
